@@ -162,7 +162,7 @@ text_encoder_2.requires_grad_(False)
 image_encoder.requires_grad_(False)
 transformer.requires_grad_(False)
 
-if config["lora"]:
+if config.get("lora", None):
     transformer = load_lora(transformer,  config["lora"]["path"], config["lora"]["name"])
 
 if not high_vram:
