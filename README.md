@@ -1,6 +1,6 @@
 Fork info:
 
-To use lora, launch with the '--lora path_to_lora' argument 
+To use lora, launch with the '--lora path_to_lora' argument. Can pass several comma-separated loras. Strength configurable with slider
 
 (I've replaced the model_config.json to avoid confusion and simplify usage)
 
