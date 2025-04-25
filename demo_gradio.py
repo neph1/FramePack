@@ -395,7 +395,7 @@ with block:
     with gr.Row():
         with gr.Column():
             input_image = gr.Image(sources='upload', type="numpy", label="Image", height=320)            
-            resolution = gr.Slider(label="Resolution", minimum=240, maximum=720, value=640, step=16)
+            resolution = gr.Slider(label="Resolution", minimum=240, maximum=1080, value=640, step=16)
             prompt = gr.Textbox(label="Prompt 1", value='', lines=5)
             example_quick_prompts = gr.Dataset(samples=quick_prompts, label='Quick List', samples_per_page=1000, components=[prompt])
             example_quick_prompts.click(lambda x: x[0], inputs=[example_quick_prompts], outputs=prompt, show_progress=False, queue=False)
