@@ -4,6 +4,13 @@ To use lora, launch with the '--lora path_to_lora' argument. Can pass several co
 
 (I've replaced the model_config.json to avoid confusion and simplify usage)
 
+Merged down "image optional t2v": https://github.com/lllyasviel/FramePack/pull/266
+
+This also utilizes the resolution slider from this pr: https://github.com/lllyasviel/FramePack/pull/158
+
+Merged down "sequential prompts": https://github.com/lllyasviel/FramePack/pull/334
+
+
 <p align="center">
     <img src="https://github.com/user-attachments/assets/2cc030b4-87e1-40a0-b5bf-1b7d6b62820b" width="300">
 </p>
