@@ -122,7 +122,7 @@ def _encode_prompt_and_generate_attention_mask(prompt, text_encoder, text_encode
         llama_attention_masks.append(llama_attention_mask)
         llama_vecs.append(llama_vec)
         clip_l_poolers.append(clip_l_pooler)
-    return llama_vecs, clip_l_poolers, llama_attention_masks
+    return list(llama_vecs), list(clip_l_poolers), list(llama_attention_masks)
 
 
 @torch.no_grad()
