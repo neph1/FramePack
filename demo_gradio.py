@@ -223,6 +223,10 @@ def worker(input_image, prompt, n_prompt, seed, total_second_length, latent_wind
             # use `latent_paddings = list(reversed(range(total_latent_sections)))` to compare
             latent_paddings = [3] + [2] * (total_latent_sections - 3) + [1, 0]
 
+        first_llama_vec = llama_vecs[0]
+        first_clip_l_pooler = clip_l_poolers[0]
+        first_llama_attention_mask = llama_attention_masks[0]
+
         for latent_padding in latent_paddings:
             is_last_section = latent_padding == 0
             latent_padding_size = latent_padding * latent_window_size
@@ -267,10 +271,6 @@ def worker(input_image, prompt, n_prompt, seed, total_second_length, latent_wind
                 desc = f'Total generated frames: {int(max(0, total_generated_latent_frames * 4 - 3))}, Video length: {max(0, (total_generated_latent_frames * 4 - 3) / 30) :.2f} seconds (FPS-30). The video is being extended now ...'
                 stream.output_queue.push(('progress', (preview, desc, make_progress_bar_html(percentage, hint))))
                 return
-
-            first_llama_vec = llama_vecs[0]
-            first_clip_l_pooler = clip_l_poolers[0]
-            first_llama_attention_mask = llama_attention_masks[0]
 
             generated_latents = sample_hunyuan(
                 transformer=transformer,
