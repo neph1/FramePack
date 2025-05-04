@@ -1,5 +1,7 @@
 Fork info:
 
+250504: Updated demo_gradio_f1. I can't do it for all the PR's separately, so I just merged it to main.
+
 To use lora, launch with the '--lora path_to_lora' argument. Can pass several comma-separated loras. Strength configurable with slider
 
 (I've replaced the model_config.json to avoid confusion and simplify usage)
